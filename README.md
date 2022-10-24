@@ -11,6 +11,9 @@ Arduino library for keeping time without an RTC
 - [x] Arduino UNO
 - [x] Arduino Mega
 - [x] Arduino Nano
+- [x] Arduino UNO WiFi REV 2
+- [x] Arduino MKR Zero
+
 
 #### [mBed OS]
 - [ ] Arduino Nano BLE 33
