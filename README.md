@@ -12,7 +12,7 @@ Arduino library for keeping time without an RTC
 
 #### [mBed OS]
 - [ ] Arduino Nano BLE 33
-- [ ] Arduino Nano RP2040 Connect
+- [ ] Arduino Nano RP2040 Connect (RP2040  Architecture)
 
 ## Library Functions with Description
 
