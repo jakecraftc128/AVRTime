@@ -31,4 +31,19 @@ Arduino library for keeping time without an RTC
 | setStringDate(month, day, year) | String, String, String | none | Changes or adjusts the date with `String` values. (`"20xx"` instead of `20xx`) |
 | printFormattedTime(&Serial) | Print (Serial) | Not directly; through Serial | Prints the current date and time, formatted |
 | validTime(startHour, startMin, endHour, endMin) | int, int, int, int | true/false | Returns true if the current time falls in the given time window (Start --> End) |
-| validGivenTime( |
+| validGivenTime(hour, minute, startHour, startMin, endHour, endMin) | int, int, int, int, int, int | true/false | Returns true if the given time (`hour`, `minute`) falls in the given time window
+| timeUpdate() | none | true/false | Returns true if `seconds` has updated since last call |
+| getSecond() | none | Any integer 0-59 | Returns the current stored `second` |
+| getMinute() | none | Any integer 0-59 | Returns the current stored `minute` |
+| getHour(hour12Time) | boolean | Any integer 0-23 if `hour12Time` is `false`, Any integer 0-12 if `hour12Time` is `true` | Returns the current stored `hour` |
+| getDate() | none | Any integer 0-[End of current month] | Returns the current stored `day` (of the month) |
+| getMonth() | none | Any integer 0-12 | Returns the current stored `month` |
+| getYear() | none | Any integer 0-9999 | Returns the current stored `year` |
+| parseSec() | none | Any number as a String "0"-"59" | Returns the current stored `second` as a `String` |
+| parseMin() | none | Any number as a String "0"-"59" | Returns the current stored `minute` as a `String` |
+| parseHour() | none | Any number as a String "0"-"23" | Returns the current stored `hour` as a `String` |
+| parseDay() | none | Any number as a String "0"-"[End of current month]" | Returns the current stored `day` as a `String` |
+| parseMonth() | none | Any Month "JAN"-"DEC" | Returns the current stored `month` as a `String` (not like a number, but rather JAN or MAR) |
+| parseYear() | none | Any number as a String "0"-"9999" | Returns the current stored `year` as a `String` |
+
+(i) A good use for the `parse ***` functions would be to use them as the arguments for the `setStringTime`/`setStringDate` functions, since their return type is a `String`
