@@ -3,6 +3,8 @@
 
 Arduino library for keeping time without an RTC
 
+**IMPORTANT: Make sure you're calling `time.keepTime()` in `void loop()` to keep time**
+
 ## Supported boards as of yet:
 
 #### [AVR]
