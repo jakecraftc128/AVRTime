@@ -8,6 +8,7 @@
 *.obj
 
 # Precompiled Headers
+*.h
 *.gch
 *.pch
 
@@ -21,6 +22,7 @@
 *.smod
 
 # Compiled Static libraries
+*.cpp
 *.lai
 *.la
 *.a
