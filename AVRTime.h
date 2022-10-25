@@ -20,6 +20,7 @@ Please check the "examples" folder in this library to learn how to use it
 class AVRTime
 {
 public:
+    AVRTime(const char *_date, const char *_time);
     void begin();
     void setTime(int h, int m, int s);
     void setStringTime(String h, String m, String s);
