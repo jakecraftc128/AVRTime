@@ -3,7 +3,15 @@
 
 Arduino library for keeping time without an RTC
 
-**IMPORTANT: Make sure you're calling `time.keepTime()` in `void loop()` to keep time**
+**IMPORTANT: Make sure you're calling** 
+```
+time.keepTime(); 
+```
+in 
+```
+void loop(){}
+```
+**to keep time**
 
 ## Supported boards:
 
@@ -11,8 +19,8 @@ Arduino library for keeping time without an RTC
 - [x] Arduino UNO
 - [x] Arduino Mega
 - [x] Arduino Nano
-- [x] Arduino UNO WiFi REV 2
-- [x] Arduino MKR Zero
+- [ ] Arduino UNO WiFi REV 2
+- [ ] Arduino MKR Zero
 
 
 #### [mBed OS]
@@ -21,9 +29,11 @@ Arduino library for keeping time without an RTC
 
 ## Library Functions with Description
 
-**Make sure to enstanciate the time object using `AVRTimer time;`**
+**Make sure to enstanciate the time object using `AVRTime time;`**
 
-**All the following are functions of the `time` object (`time.*`)**
+*NOTE: On the RP2040 architecture (i.e. Arduino Nano RP2040 Connect), you must enstanciate with* `AVRTime Time`*, because* `time` *is already used*
+
+### **All the following are functions of the `time` object (`time.*`)**
 
 | Function Name | Argument Data Types | Returned Values | Description |
 |---------------|---------------------|-----------------|-------------|
@@ -49,4 +59,8 @@ Arduino library for keeping time without an RTC
 | parseMonth() | none | Any Month "JAN"-"DEC" | Returns the current stored `month` as a `String` (not like a number, but rather JAN or MAR) |
 | parseYear() | none | Any number as a String "0"-"9999" | Returns the current stored `year` as a `String` |
 
-(i) A good use for the `parse ***` functions would be to use them as the arguments for the `setStringTime`/`setStringDate` functions, since their return type is a `String`
+(i) A good use for the `parse***` functions would be to use them as the arguments for the `setStringTime`/`setStringDate` functions, since their return type is a `String`
+### FAQ
+Question: Why do the `parse***` functions return a `String` data type?
+  
+Answer: Because the default `__TIME__` and `__DATE__` from the compiler are `String` values.
