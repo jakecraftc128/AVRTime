@@ -14,9 +14,15 @@ int Month;
 int Year1; // The left two digits of the year
 int Year2; // The right two digits of the year
 int uploadTime = 10;
-String STRTime = String(__TIME__);
-String STRDate = String(__DATE__);
+String STRTime;
+String STRDate;
 String monthName[12] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+
+AVRTime::AVRTime(const char *_date, const char *_time)
+{
+    STRTime = String(_time);
+    STRDate = String(_date);
+}
 
 void AVRTime::begin() // Set date and time
 {
